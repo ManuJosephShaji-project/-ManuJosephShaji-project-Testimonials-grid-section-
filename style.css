@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    /* Colors */
+    /* Primary */
+    --purple-50: hsl(260, 100%, 95%);
+    --purple-300: hsl(264, 82%, 80%);
+    --purple-500: hsl(263, 55%, 52%);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --grey-100: hsl(214, 17%, 92%);
+    --grey-200: hsl(0, 0%, 81%);
+    --grey-400: hsl(224, 10%, 45%);
+    --grey-500: hsl(217, 19%, 35%);
+    --dark-blue: hsl(219, 29%, 14%);
+    --black: hsl(0, 0%, 7%);
+
+    /* font-family */
+    --barlow-semi-condensed: "Barlow Semi Condensed", sans-serif;
+}
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 0.5fr);
+    grid-template-areas:
+        "box-1 box-1 box-2 box-3"
+        "box-4 box-5 box-5 box-3";
+    gap: 1.5em;
+    padding: 4%;
+}
+
+.box {
+    position: relative;
+    background-color: var(--purple-500);
+    border-radius: 10px;
+    box-shadow: 8px 7px 21px var(--grey-400);
+}
+
+.box:nth-child(1) {
+    background-color: var(--purple-500);
+}
+
+.box:nth-child(2) {
+    background-color: var(--grey-500);
+}
+
+.box:nth-child(3) {
+    background-color: var(--white);
+    z-index: 4;
+}
+
+.box:nth-child(4) {
+    background-color: var(--white);
+}
+
+.box:nth-child(5) {
+    background-color: var(--dark-blue);
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 20px 6%;
+    padding-bottom: 0px;
+    font-family: var(--barlow-semi-condensed);
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.profile-card img {
+    float: left;
+    width: 41px;
+    border-radius: 50%;
+    border: 3px solid var(--purple-300);
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.bg-pattern {
+    position: absolute;
+    top: 0%;
+    right: 14%;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.status {
+    font-size: 12px;
+    color: var(--grey-200);
+}
+
+.info {
+    position: relative;
+    padding: 3% 7%;
+    font-family: var(--barlow-semi-condensed);
+    font-weight: 300;
+    color: var(--white);
+}
+
+.info h3 {
+    width: 95%;
+}
+
+.info-details {
+    font-family: var(--barlow-semi-condensed);
+    color: var(--grey-200);
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.box:nth-child(3) .profile-card {
+    color: var(--dark-blue);
+}
+
+.box:nth-child(3) .profile-card .status {
+    color: var(--grey-500);
+}
+
+.box:nth-child(3) .info {
+    color: var(--dark-blue);
+}
+
+.box:nth-child(3) .info .info-details {
+    color: var(--grey-500);
+}
+
+.box:nth-child(4) .profile-card {
+    color: var(--dark-blue);
+}
+
+.box:nth-child(4) .profile-card .status {
+    color: var(--grey-500);
+}
+
+.box:nth-child(4) .info {
+    color: var(--dark-blue);
+}
+
+.box:nth-child(4) .info h3 {
+    width: 79%;
+}
+
+.box:nth-child(4) .info .info-details {
+    color: var(--grey-500);
+}
+
+.box:nth-child(2) .profile-card img {
+    border-color: var(--grey-400);
+}
+
+@media (max-width:700px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 0.5fr);
+        grid-template-areas:
+            "box-1"
+            "box-2"
+            "box-3"
+            "box-4"
+            "box-5";
+        gap: 1.5em;
+        padding: 4%;
+    }
+}
